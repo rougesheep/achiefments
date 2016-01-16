@@ -19,7 +19,7 @@ The Master Chief Collection has far too many achievements and no easy way to bro
 
 ## Using It
 
-You can view my latest version at http://ajb.im/achiefments. It's a bit rough at the moment though and you need to manually supply it with your Xbox User ID (XUID). You can get this by going to http://ajb.im/achiefments/getxuid?gamertag=<GAMERTAG> which will give you a link with your XUID in place for you.
+You can view my latest version at http://ajb.im/achiefments. It's a bit rough at the moment though and you need to manually supply it with your Xbox User ID (XUID). You can get this by going to http://ajb.im/achiefments/getxuid.php?gamertag= (add your gamertag to the end) which will give you a link with your XUID in place for you.
 
 ## API Limits
 
