@@ -7,6 +7,7 @@ The Master Chief Collection has far too many achievements and no easy way to bro
 
 * Filter achievements by game
 * Only shows non-unlocked achievements
+* Include achievement artwork
 
 ## To-Do
 
@@ -14,7 +15,7 @@ The Master Chief Collection has far too many achievements and no easy way to bro
 * Toggle showing unlocked
 * Be prettier
 * Add other Halo games
-* Include achievement artwork
+* Handle achievement artwork better
 * Sorting
 
 ## Using It

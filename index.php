@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Lightbox -->
+    <link href="bootstrap-lightbox/bootstrap-lightbox.css" rel="stypesheet">
     <!-- my tweaks -->
     <link href="custom.css" rel="stylesheet">
   </head>
@@ -29,6 +31,7 @@
       }
       if ( isset( $_GET['gamertag'] ) && !empty( $_GET['gamertag'] )) {
         $gamertag = $_GET['gamertag'];
+        $safertag = urlencode($gamertag);
         $xuid = get_xuid($gamertag);
       } else {
         echo "ERROR: No Gamertag supplied.";
@@ -54,24 +57,24 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li<?php if ( $game == "all" ) { echo " class=\"active\""; } ?>><a href="?game=all&xuid=<?php echo $xuid; ?>">All</a></li>
+                <li<?php if ( $game == "all" ) { echo " class=\"active\""; } ?>><a href="?game=all&gamertag=<?php echo $safertag; ?>">All</a></li>
                 <li role="separator" class="divider"></li>
-                <li<?php if ( $game == "H1" ) { echo " class=\"active\""; } ?>><a href="?game=H1&xuid=<?php echo $xuid; ?>">Halo: CE</a></li>
-                <li<?php if ( $game == "H2" ) { echo " class=\"active\""; } ?>><a href="?game=H2&xuid=<?php echo $xuid; ?>">Halo 2</a></li>
-                <li<?php if ( $game == "H3" ) { echo " class=\"active\""; } ?>><a href="?game=H3&xuid=<?php echo $xuid; ?>">Halo 3</a></li>
-                <li<?php if ( $game == "ODST" ) { echo " class=\"active\""; } ?>><a href="?game=ODST&xuid=<?php echo $xuid; ?>">Halo 3: ODST</a></li>
-                <li<?php if ( $game == "H4" ) { echo " class=\"active\""; } ?>><a href="?game=H4&xuid=<?php echo $xuid; ?>">Halo 4</a></li>
+                <li<?php if ( $game == "H1" ) { echo " class=\"active\""; } ?>><a href="?game=H1&gamertag=<?php echo $safertag; ?>">Halo: CE</a></li>
+                <li<?php if ( $game == "H2" ) { echo " class=\"active\""; } ?>><a href="?game=H2&gamertag=<?php echo $safertag; ?>">Halo 2</a></li>
+                <li<?php if ( $game == "H3" ) { echo " class=\"active\""; } ?>><a href="?game=H3&gamertag=<?php echo $safertag; ?>">Halo 3</a></li>
+                <li<?php if ( $game == "ODST" ) { echo " class=\"active\""; } ?>><a href="?game=ODST&gamertag=<?php echo $safertag; ?>">Halo 3: ODST</a></li>
+                <li<?php if ( $game == "H4" ) { echo " class=\"active\""; } ?>><a href="?game=H4&gamertag=<?php echo $safertag; ?>">Halo 4</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Type <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li<?php if ( $type == "all" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&xuid=<?php echo $xuid; ?>">All</a></li>
-                <li<?php if ( $type == "skulls" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=skulls&xuid=<?php echo $xuid; ?>">Skulls</a></li>
-                <li<?php if ( $type == "terminals" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=terminals&xuid=<?php echo $xuid; ?>">Terminals</a></li>
-                <li<?php if ( $type == "time" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=time&xuid=<?php echo $xuid; ?>">Time</a></li>
-                <li<?php if ( $type == "score" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=score&xuid=<?php echo $xuid; ?>">Score</a></li>
-                <li<?php if ( $type == "mp" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=mp&xuid=<?php echo $xuid; ?>">Multiplayer</a></li>
+                <li<?php if ( $type == "all" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&gamertag=<?php echo $safertag; ?>">All</a></li>
+                <li<?php if ( $type == "skulls" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=skulls&gamertag=<?php echo $safertag; ?>">Skulls</a></li>
+                <li<?php if ( $type == "terminals" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=terminals&gamertag=<?php echo $safertag; ?>">Terminals</a></li>
+                <li<?php if ( $type == "time" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=time&gamertag=<?php echo $safertag; ?>">Time</a></li>
+                <li<?php if ( $type == "score" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=score&gamertag=<?php echo $safertag; ?>">Score</a></li>
+                <li<?php if ( $type == "mp" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=mp&gamertag=<?php echo $safertag; ?>">Multiplayer</a></li>
               </ul>
             </li>
           </ul>
@@ -122,5 +125,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap-lightbox/boostrap-lightbox.min.js"></script>
   </body>
 </html>
