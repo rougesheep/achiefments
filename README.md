@@ -17,6 +17,14 @@ The Master Chief Collection has far too many achievements and no easy way to bro
 * Include achievement artwork
 * Sorting
 
+## Using It
+
+You can view my latest version at http://ajb.im/achiefments. It's a bit rough at the moment though and you need to manually supply it with your Xbox User ID (XUID). You can get this by going to http://ajb.im/achiefments/getxuid?gamertag=<GAMERTAG> which will give you a link with your XUID in place for you.
+
+## API Limits
+
+I use [XboxAPI](https://xboxapi.com) to get achievement information. There is a limit on the number of requests per hour. If you see errors, I might be hitting the limits. I do not include my API key here. If you clone, you'll need to generate your own one.
+
 ## Credit
 * [Microsoft](https://xbox.com)
 * [XboxAPI](https://xboxapi.com)

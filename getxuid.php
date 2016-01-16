@@ -13,7 +13,7 @@
         echo "ERROR: No Gamertag supplied.";
         exit;
       }
-      echo "XUID = " . get_xuid($gamertag);
+      echo "<a href=\"http://ajb.im/achiefments?xuid=" . get_xuid($gamertag) . "\">Continue</a>";
     ?>
   </body>
 </html>
