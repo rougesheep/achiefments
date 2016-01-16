@@ -48,7 +48,7 @@
 		$imgSmall = "res/img/small/" . substr($achievement["mediaAssets"]["0"]["name"],0) . ".jpg";
 		if ( $showComplete == false && $achievement["progressState"] != "Achieved") {
 			echo "<div class=\"row top-buffer\">";
-			echo "<div class=\"col-xs-12 col-md-2\"><a href=\"" . $achievement["mediaAssets"]["0"]["url"] . "\"><img class=\"img-responsive\" src=\"" . $imgSmall . "\"></a></div>";
+			echo "<div class=\"col-xs-12 col-md-2\"><a href=\"" . $achievement["mediaAssets"]["0"]["url"] . "\" target=\"_blank\"><img class=\"img-responsive\" src=\"" . $imgSmall . "\"></a></div>";
       echo "<div class=\"col-xs-12 col-md-10\">";
       echo "<h3>" . $achievement["name"] . " <small>" . $achievement["rewards"]["0"]["value"] . "G</small></h3>";
       echo "<p>" . $achievement["description"]  . "</p>";
