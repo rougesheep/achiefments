@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- my tweaks -->
+    <link href="custom.css" rel="stylesheet">
   </head>
 
   <body style="padding-top: 50px; padding-bottom: 20px;">
@@ -25,10 +27,11 @@
       } else {
         $type = all;
       }
-      if ( isset( $_GET['xuid'] ) && !empty( $_GET['xuid'] )) {
-        $xuid = $_GET['xuid'];
+      if ( isset( $_GET['gamertag'] ) && !empty( $_GET['gamertag'] )) {
+        $gamertag = $_GET['gamertag'];
+        $xuid = get_xuid($gamertag);
       } else {
-        echo "ERROR: No XUID supplied.";
+        echo "ERROR: No Gamertag supplied.";
         exit;
       }
     ?>
@@ -71,6 +74,9 @@
                 <li<?php if ( $type == "mp" ) { echo " class=\"active\""; } ?>><a href="?game=<?php echo $game; ?>&type=mp&xuid=<?php echo $xuid; ?>">Multiplayer</a></li>
               </ul>
             </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><?php echo $gamertag; ?></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

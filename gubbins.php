@@ -20,13 +20,6 @@
 		return $response;
 	}
 
-	function get_gamercard($xuid) {
-		global $xuid;
-		$request = $base_url . $xuid . "/gamercard";
-		$response = xbox_api_request($request);
-		return $response;
-	}
-
 	// Get list of xbox one games
 	function get_xbone_games($xuid) {
 		global $base_url;
@@ -53,7 +46,7 @@
 		global $showComplete;
 		global $achievement;
 		if ( $showComplete == false && $achievement["progressState"] != "Achieved") {
-			echo "<div class=\"row\">";
+			echo "<div class=\"row top-buffer\">";
 			echo "<div class=\"col-xs-12 col-md-2\"><img class=\"img-responsive\" src=\"" . $achievement["mediaAssets"]["0"]["url"] . "\"></div>";
       echo "<div class=\"col-xs-12 col-md-10\">";
       echo "<h3>" . $achievement["name"] . " <small>" . $achievement["rewards"]["0"]["value"] . "G</small></h3>";
