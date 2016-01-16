@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <title>Achiefments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body style="padding-top: 50px; padding-bottom: 20px;">
-    <?php 
+    <?php
       require 'gubbins.php';
       if ( isset( $_GET['game'] ) && !empty( $_GET['game'] )) {
         $game = $_GET['game'];
@@ -23,7 +24,7 @@
         $type = $_GET['type'];
       } else {
         $type = all;
-      } 
+      }
       if ( isset( $_GET['xuid'] ) && !empty( $_GET['xuid'] )) {
         $xuid = $_GET['xuid'];
       } else {
@@ -32,11 +33,20 @@
       }
     ?>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-      <div class="navbar-header">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="#">Achiefments</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game <span class="caret"></span></a>
@@ -62,8 +72,8 @@
               </ul>
             </li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
     </nav>
     <div class="container">
      <?php
@@ -108,4 +118,3 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
-

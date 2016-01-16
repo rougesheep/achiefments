@@ -2,7 +2,7 @@
 	include 'httpful.phar';
 	include 'private.php';
 	$base_url = "https://xboxapi.com/v2/";
-	
+
 	// Send request to xboxapi.com
 	function xbox_api_request($uri) {
 		global $private_apiKey;
@@ -16,6 +16,13 @@
 	function get_xuid($gamertag) {
 		global $base_url;
 		$request = $base_url . "xuid/" . $gamertag;
+		$response = xbox_api_request($request);
+		return $response;
+	}
+
+	function get_gamercard($xuid) {
+		global $xuid;
+		$request = $base_url . $xuid . "/gamercard";
 		$response = xbox_api_request($request);
 		return $response;
 	}
@@ -46,8 +53,11 @@
 		global $showComplete;
 		global $achievement;
 		if ( $showComplete == false && $achievement["progressState"] != "Achieved") {
-      echo "<hr>";
-      echo "<h3>" . $achievement["name"] . " - " . $achievement["rewards"]["0"]["value"] . "G</h3>";
-      echo $achievement["description"]  . "</br>";
+			echo "<div class=\"row\">";
+			echo "<div class=\"col-xs-12 col-md-2\"><img class=\"img-responsive\" src=\"" . $achievement["mediaAssets"]["0"]["url"] . "\"></div>";
+      echo "<div class=\"col-xs-12 col-md-10\">";
+      echo "<h3>" . $achievement["name"] . " <small>" . $achievement["rewards"]["0"]["value"] . "G</small></h3>";
+      echo "<p>" . $achievement["description"]  . "</p>";
+			echo "</div></div>";
     }
 	}
