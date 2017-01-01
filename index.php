@@ -25,7 +25,7 @@
       if ( isset( $_GET['type'] ) && !empty( $_GET['type'] )) {
         $type = $_GET['type'];
       } else {
-        $type = all;
+        $type = "all";
       }
       if ( isset( $_GET['gamertag'] ) && !empty( $_GET['gamertag'] )) {
         $gamertag = $_GET['gamertag'];
